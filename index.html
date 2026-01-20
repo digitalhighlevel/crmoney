@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deer Cell CRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Polyfill process for browser environment to avoid ReferenceError with GenAI SDK
+      window.process = window.process || { env: {} };
+
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              border: "#e2e8f0", // Slate 200
+              input: "#e2e8f0",
+              ring: "#0f766e", // Teal 700
+              background: "#f1f5f9", // Slate 100
+              foreground: "#0f172a", // Slate 900
+              primary: {
+                DEFAULT: "#0f766e", // Teal 700 (Sidebar color)
+                foreground: "#f0fdfa",
+              },
+              secondary: {
+                DEFAULT: "#f1f5f9",
+                foreground: "#0f172a",
+              },
+              muted: {
+                DEFAULT: "#f1f5f9",
+                foreground: "#64748b",
+              },
+              card: {
+                DEFAULT: "#ffffff",
+                foreground: "#0f172a",
+              },
+              sidebar: {
+                DEFAULT: "#00695C", // Deep Teal from image
+                foreground: "#ffffff"
+              }
+            },
+            borderRadius: {
+              lg: "0.5rem",
+              md: "calc(0.5rem - 2px)",
+              sm: "calc(0.5rem - 4px)",
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f1f5f9;
+      }
+      /* Custom scrollbar matching light theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background text-foreground antialiased overflow-hidden">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
